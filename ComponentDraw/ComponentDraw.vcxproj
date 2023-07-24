@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8DC1C59F-16FB-46DE-845F-03C067A79D3B}</ProjectGuid>
+    <RootNamespace>ComponentDraw</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;COMPONENTDRAW_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;$(SolutionDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ServerDataAccessd.lib;DB_BasicIOd.lib;vld.lib;ControlExd.lib;DataPointd.lib;Toolsd.lib;osgd.lib;osggad.lib;osgdbd.lib;osgviewerd.lib;osgutild.lib;osgTextd.lib;osgFXd.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(SolutionDir)\bin\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(SolutionDir)\bin;$(SolutionDir)\bin\$(Configuration);$(SolutionDir)lib</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\ComponentDrawd.def</ModuleDefinitionFile>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;COMPONENTDRAW_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;$(SolutionDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ServerDataAccess.lib;DB_BasicIO.lib;ControlEx.lib;Tools.lib;DataPoint.lib;osg.lib;osgga.lib;osgdb.lib;osgviewer.lib;osgutil.lib;osgText.lib;osgFX.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(SolutionDir)\bin\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(SolutionDir)\bin;$(SolutionDir)\bin\$(Configuration);$(SolutionDir)lib</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\ComponentDraw.def</ModuleDefinitionFile>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CEqmDrawPage.cpp" />
+    <ClCompile Include="ComponentDraw.cpp" />
+    <ClCompile Include="DrawObject.cpp" />
+    <ClCompile Include="DrawProxy.cpp" />
+    <ClCompile Include="EqmDrawAreaChange.cpp" />
+    <ClCompile Include="EqmDrawBarGraphic.cpp" />
+    <ClCompile Include="EqmDrawBase.cpp" />
+    <ClCompile Include="EqmDrawBend.cpp" />
+    <ClCompile Include="EqmDrawButton.cpp" />
+    <ClCompile Include="EqmDrawButtonPlus.cpp" />
+    <ClCompile Include="EqmDrawDashBoard.cpp" />
+    <ClCompile Include="EqmDrawDataAnalyse.cpp" />
+    <ClCompile Include="EqmDrawDataReport.cpp" />
+    <ClCompile Include="EqmDrawDefines.cpp" />
+    <ClCompile Include="EqmDrawDevice.cpp" />
+    <ClCompile Include="EqmDrawDiagnoseGraphic.cpp" />
+    <ClCompile Include="EqmDrawDiagnoseGraphicPlus.cpp" />
+    <ClCompile Include="EqmDrawDottedLineFrm.cpp" />
+    <ClCompile Include="EqmDrawEmbededPage.cpp" />
+    <ClCompile Include="EqmDrawEnergySaveRoi.cpp" />
+    <ClCompile Include="EqmDrawGeneralComponent.cpp" />
+    <ClCompile Include="EqmDrawGraphic.cpp" />
+    <ClCompile Include="EqmDrawGraphicEllipse.cpp" />
+    <ClCompile Include="EqmDrawGraphicLine.cpp" />
+    <ClCompile Include="EqmDrawGraphicPolygon.cpp" />
+    <ClCompile Include="EqmDrawGraphicRect.cpp" />
+    <ClCompile Include="EqmDrawHistoryTrend.cpp" />
+    <ClCompile Include="EqmDrawLevelRuler.cpp" />
+    <ClCompile Include="EqmDrawLineGraphic.cpp" />
+    <ClCompile Include="EqmDrawLiquidLevel.cpp" />
+    <ClCompile Include="EqmDrawMapNavigate.cpp" />
+    <ClCompile Include="EqmDrawNavigateWindow.cpp" />
+    <ClCompile Include="EqmDrawPieGraphic.cpp" />
+    <ClCompile Include="EqmDrawPipe.cpp" />
+    <ClCompile Include="EqmDrawPlaneTempeDistr.cpp" />
+    <ClCompile Include="EqmDrawPolygon.cpp" />
+    <ClCompile Include="EqmDrawProgressBar.cpp" />
+    <ClCompile Include="EqmDrawProject.cpp" />
+    <ClCompile Include="EqmDrawRectangle.cpp" />
+    <ClCompile Include="EqmDrawScrawl.cpp" />
+    <ClCompile Include="EqmDrawShellExecute.cpp" />
+    <ClCompile Include="EqmDrawStraightLine.cpp" />
+    <ClCompile Include="EqmDrawTemperDistri.cpp" />
+    <ClCompile Include="EqmDrawText.cpp" />
+    <ClCompile Include="EqmDrawTimeBar.cpp" />
+    <ClCompile Include="EqmDrawTimeSelect.cpp" />
+    <ClCompile Include="PageTemplateInfo.cpp" />
+    <ClCompile Include="ParseStringParam3.cpp" />
+    <ClCompile Include="ProjectSqlite.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UtilDrawNumber.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CEqmDrawPage.h" />
+    <ClInclude Include="DrawObject.h" />
+    <ClInclude Include="DrawProxy.h" />
+    <ClInclude Include="EqmDrawAreaChange.h" />
+    <ClInclude Include="EqmDrawBarGraphic.h" />
+    <ClInclude Include="EqmDrawBase.h" />
+    <ClInclude Include="EqmDrawBend.h" />
+    <ClInclude Include="EqmDrawButton.h" />
+    <ClInclude Include="EqmDrawButtonPlus.h" />
+    <ClInclude Include="EqmDrawDashBoard.h" />
+    <ClInclude Include="EqmDrawDataAnalyse.h" />
+    <ClInclude Include="EqmDrawDataReport.h" />
+    <ClInclude Include="EqmDrawDefines.h" />
+    <ClInclude Include="EqmDrawDevice.h" />
+    <ClInclude Include="EqmDrawDiagnoseGraphic.h" />
+    <ClInclude Include="EqmDrawDiagnoseGraphicPlus.h" />
+    <ClInclude Include="EqmDrawDottedLineFrm.h" />
+    <ClInclude Include="EqmDrawEmbededPage.h" />
+    <ClInclude Include="EqmDrawEnergySaveRoi.h" />
+    <ClInclude Include="EqmDrawGeneralComponent.h" />
+    <ClInclude Include="EqmDrawGraphic.h" />
+    <ClInclude Include="EqmDrawGraphicEllipse.h" />
+    <ClInclude Include="EqmDrawGraphicLine.h" />
+    <ClInclude Include="EqmDrawGraphicPolygon.h" />
+    <ClInclude Include="EqmDrawGraphicRect.h" />
+    <ClInclude Include="EqmDrawHistoryTrend.h" />
+    <ClInclude Include="EqmDrawLevelRuler.h" />
+    <ClInclude Include="EqmDrawLineGraphic.h" />
+    <ClInclude Include="EqmDrawLiquidLevel.h" />
+    <ClInclude Include="EqmDrawMapNavigate.h" />
+    <ClInclude Include="EqmDrawNavigateWindow.h" />
+    <ClInclude Include="EqmDrawPieGraphic.h" />
+    <ClInclude Include="EqmDrawPipe.h" />
+    <ClInclude Include="EqmDrawPlaneTempeDistr.h" />
+    <ClInclude Include="EqmDrawPolygon.h" />
+    <ClInclude Include="EqmDrawProgressBar.h" />
+    <ClInclude Include="EqmDrawProject.h" />
+    <ClInclude Include="EqmDrawRectangle.h" />
+    <ClInclude Include="EqmDrawScrawl.h" />
+    <ClInclude Include="EqmDrawShellExecute.h" />
+    <ClInclude Include="EqmDrawStraightLine.h" />
+    <ClInclude Include="EqmDrawTemperDistri.h" />
+    <ClInclude Include="EqmDrawText.h" />
+    <ClInclude Include="EqmDrawTimeBar.h" />
+    <ClInclude Include="EqmDrawTimeSelect.h" />
+    <ClInclude Include="PageTemplateInfo.h" />
+    <ClInclude Include="ParseStringParam3.h" />
+    <ClInclude Include="ProjectSqlite.h" />
+    <ClInclude Include="memdc.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="UtilDrawNumber.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="\dom\Code\Factory\trunk\DataPoint\BEOPDataPoint.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
