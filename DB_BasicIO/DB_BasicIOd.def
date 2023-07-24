@@ -1,0 +1,6 @@
+; DB_BasicIOd.def : Declares the module parameters for the DLL.
+
+LIBRARY      "DB_BasicIOd"
+
+EXPORTS
+    ; Explicit exports can go here

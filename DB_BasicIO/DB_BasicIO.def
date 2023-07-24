@@ -1,0 +1,6 @@
+; DB_BasicIO.def : Declares the module parameters for the DLL.
+
+LIBRARY      "DB_BasicIO"
+
+EXPORTS
+    ; Explicit exports can go here

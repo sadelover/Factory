@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DatabaseSession.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="DB_BasicIO.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="DBAccessContainer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="DBAccessMeter.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="DBCopy.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="RunningRecordOperation.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="RealTimeDataAccess.cpp" />
+    <ClCompile Include="ExportDataAccess.cpp" />
+    <ClCompile Include="TrendAnalyzeDataAccess.cpp" />
+    <ClCompile Include="TableAnalyzer.cpp" />
+    <ClCompile Include="MDOPointConfigDataAccess.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="WarningConfigItem.cpp" />
+    <ClCompile Include="CommonDBAccess.cpp" />
+    <ClCompile Include="WarningEntry.cpp" />
+    <ClCompile Include="Sqlite\SqliteAcess.cpp">
+      <Filter>Sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqlite\SqliteRW.cpp">
+      <Filter>Sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="IOSConfigDBAccess.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DatabaseSession.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DBAccessContainer.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DBAccessMeter.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DBCopy.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DBInterfaceExp.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DBInterfaceImp.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Chiller_Eff_Design_Data.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Chiller_Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_ChillerLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_ChillerPlantRoom.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_ChillerRunRecord.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_CHPlantRoomLoad.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_ControlParamRecord.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_CoolingTower_Eff_Design_Data.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_CoolingTower_Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_CoolingTowerLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_CornerLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_EnergyPrice.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_HeatLoadYear.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_HxLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_ImageProperty.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_ListSuggestion.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_PictureLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_PipeLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Project.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Pump_Eff_Design_Data.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Pump_Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_PumpLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_PumpRunRecord.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Record_Point_List.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Chiller.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_CoolingTower.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Corner.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Hx.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Pipe.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_PowerMeter.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Pump.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Tank.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Terminal.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Valve.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_Warternet.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Room_Contain_WarterSoil.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_RunContiditonSimulate.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_Tank_Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_TankLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_TerminalLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_UPPC_User.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_UPPCUSERS.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_ValveLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_WaterNet_Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\define_waternet_param.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_WaterSoil_Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_WaterSoilLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_WeatherDesignData.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\Define_WeatherHourData.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DllDefine.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MysqlDeleter.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDefine\PointRecord_Define.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningRecordOperation.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TableDef.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="RealTimeDataAccess.h" />
+    <ClInclude Include="ExportDataAccess.h" />
+    <ClInclude Include="TrendAnalyzeDataAccess.h" />
+    <ClInclude Include="StructDefine\ActionInfo_Define.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TableAnalyzer.h" />
+    <ClInclude Include="MDOPointConfigDataAccess.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="WarningConfigItem.h" />
+    <ClInclude Include="CommonDBAccess.h" />
+    <ClInclude Include="WarningEntry.h" />
+    <ClInclude Include="Sqlite\SqliteRW.h">
+      <Filter>Sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqlite\sqlite3.h">
+      <Filter>Sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqlite\sqlite3ext.h">
+      <Filter>Sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqlite\SqliteAcess.h">
+      <Filter>Sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="IOSConfigDBAccess.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{e4ea4cb3-8e68-4bad-b593-cf361215bd14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{04b7611f-3755-4d29-b48f-755180c9b96f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sqlite">
+      <UniqueIdentifier>{eb542b77-ae51-4df2-84e4-ef4579ba2b6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

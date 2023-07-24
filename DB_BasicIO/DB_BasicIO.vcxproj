@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9A12ED28-6748-44BC-A65B-843D5CCEEFA9}</ProjectGuid>
+    <RootNamespace>DB_BasicIO</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\mySqlInclude;include;$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DB_BASICIO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;logd.lib;toolsd.lib;sqlite3.lib;DataPointd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)/bin/debug</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(SolutionDir)\bin\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>true</Profile>
+      <ModuleDefinitionFile>.\DB_BasicIOd.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\mySqlInclude;include;$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DB_BASICIO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;log.lib;tools.lib;sqlite3.lib;DataPoint.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)/bin/release</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(SolutionDir)\bin\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ModuleDefinitionFile>.\DB_BasicIO.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CommonDBAccess.cpp" />
+    <ClCompile Include="DatabaseSession.cpp" />
+    <ClCompile Include="DBAccessMeter.cpp" />
+    <ClCompile Include="DB_BasicIO.cpp" />
+    <ClCompile Include="DBAccessContainer.cpp" />
+    <ClCompile Include="DBCopy.cpp" />
+    <ClCompile Include="ExportDataAccess.cpp" />
+    <ClCompile Include="IOSConfigDBAccess.cpp" />
+    <ClCompile Include="MDOPointConfigDataAccess.cpp" />
+    <ClCompile Include="RealTimeDataAccess.cpp" />
+    <ClCompile Include="RunningRecordOperation.cpp" />
+    <ClCompile Include="Sqlite\SqliteAcess.cpp" />
+    <ClCompile Include="Sqlite\SqliteRW.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TableAnalyzer.cpp" />
+    <ClCompile Include="TrendAnalyzeDataAccess.cpp" />
+    <ClCompile Include="WarningConfigItem.cpp" />
+    <ClCompile Include="WarningEntry.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonDBAccess.h" />
+    <ClInclude Include="DatabaseSession.h" />
+    <ClInclude Include="DBAccessContainer.h" />
+    <ClInclude Include="DBAccessMeter.h" />
+    <ClInclude Include="DBCopy.h" />
+    <ClInclude Include="DBInterfaceExp.h" />
+    <ClInclude Include="DBInterfaceImp.h" />
+    <ClInclude Include="DllDefine.h" />
+    <ClInclude Include="ExportDataAccess.h" />
+    <ClInclude Include="IOSConfigDBAccess.h" />
+    <ClInclude Include="MDOPointConfigDataAccess.h" />
+    <ClInclude Include="MysqlDeleter.h" />
+    <ClInclude Include="RealTimeDataAccess.h" />
+    <ClInclude Include="RunningRecordOperation.h" />
+    <ClInclude Include="Sqlite\sqlite3.h" />
+    <ClInclude Include="Sqlite\sqlite3ext.h" />
+    <ClInclude Include="Sqlite\SqliteAcess.h" />
+    <ClInclude Include="Sqlite\SqliteRW.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StructDefine\ActionInfo_Define.h" />
+    <ClInclude Include="TableAnalyzer.h" />
+    <ClInclude Include="TableDef.h" />
+    <ClInclude Include="StructDefine\Define_Chiller_Eff_Design_Data.h" />
+    <ClInclude Include="StructDefine\Define_Chiller_Model.h" />
+    <ClInclude Include="StructDefine\Define_ChillerLib.h" />
+    <ClInclude Include="StructDefine\Define_ChillerPlantRoom.h" />
+    <ClInclude Include="StructDefine\Define_ChillerRunRecord.h" />
+    <ClInclude Include="StructDefine\Define_CHPlantRoomLoad.h" />
+    <ClInclude Include="StructDefine\Define_ControlParamRecord.h" />
+    <ClInclude Include="StructDefine\Define_CoolingTower_Eff_Design_Data.h" />
+    <ClInclude Include="StructDefine\Define_CoolingTower_Model.h" />
+    <ClInclude Include="StructDefine\Define_CoolingTowerLib.h" />
+    <ClInclude Include="StructDefine\Define_CornerLib.h" />
+    <ClInclude Include="StructDefine\Define_EnergyPrice.h" />
+    <ClInclude Include="StructDefine\Define_HeatLoadYear.h" />
+    <ClInclude Include="StructDefine\Define_HxLib.h" />
+    <ClInclude Include="StructDefine\Define_ImageProperty.h" />
+    <ClInclude Include="StructDefine\Define_ListSuggestion.h" />
+    <ClInclude Include="StructDefine\Define_PictureLib.h" />
+    <ClInclude Include="StructDefine\Define_PipeLib.h" />
+    <ClInclude Include="StructDefine\Define_Project.h" />
+    <ClInclude Include="StructDefine\Define_Pump_Eff_Design_Data.h" />
+    <ClInclude Include="StructDefine\Define_Pump_Model.h" />
+    <ClInclude Include="StructDefine\Define_PumpLib.h" />
+    <ClInclude Include="StructDefine\Define_PumpRunRecord.h" />
+    <ClInclude Include="StructDefine\Define_Record_Point_List.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Chiller.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_CoolingTower.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Corner.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Hx.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Pipe.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_PowerMeter.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Pump.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Tank.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Terminal.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Valve.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_Warternet.h" />
+    <ClInclude Include="StructDefine\Define_Room_Contain_WarterSoil.h" />
+    <ClInclude Include="StructDefine\Define_RunContiditonSimulate.h" />
+    <ClInclude Include="StructDefine\Define_Tank_Model.h" />
+    <ClInclude Include="StructDefine\Define_TankLib.h" />
+    <ClInclude Include="StructDefine\Define_TerminalLib.h" />
+    <ClInclude Include="StructDefine\Define_UPPC_User.h" />
+    <ClInclude Include="StructDefine\Define_UPPCUSERS.h" />
+    <ClInclude Include="StructDefine\Define_ValveLib.h" />
+    <ClInclude Include="StructDefine\Define_WaterNet_Model.h" />
+    <ClInclude Include="StructDefine\define_waternet_param.h" />
+    <ClInclude Include="StructDefine\Define_WaterSoil_Model.h" />
+    <ClInclude Include="StructDefine\Define_WaterSoilLib.h" />
+    <ClInclude Include="StructDefine\Define_WeatherDesignData.h" />
+    <ClInclude Include="StructDefine\Define_WeatherHourData.h" />
+    <ClInclude Include="StructDefine\PointRecord_Define.h" />
+    <ClInclude Include="TrendAnalyzeDataAccess.h" />
+    <ClInclude Include="WarningConfigItem.h" />
+    <ClInclude Include="WarningEntry.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
