@@ -1,0 +1,1388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{014FDE8C-C5F7-4563-9462-24C5AFB7750C}</ProjectGuid>
+    <RootNamespace>UPPCDesigner</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>Factory</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\obj\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\obj\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)d</TargetName>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;$(SolutionDir);$(SolutionDir)\$(ProjectName)\bacnet\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ControlExd.lib;vld.lib;Toolsd.lib;DataPointd.lib;logd.lib;ComponentDrawd.lib;DB_BasicIOd.lib;chartdir50.lib;ServerDataAccessd.lib;Propsys.lib;libnodave.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(SolutionDir)\bin\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <AdditionalLibraryDirectories>$(SolutionDir)\bin;$(SolutionDir)\bin\$(Configuration);$(SolutionDir)lib</AdditionalLibraryDirectories>
+      <Profile>false</Profile>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;$(SolutionDir);$(SolutionDir)\$(ProjectName)\bacnet\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ControlEx.lib;Tools.lib;DataPoint.lib;log.lib;ComponentDraw.lib;DB_BasicIO.lib;chartdir50.lib;ServerDataAccess.lib;Propsys.lib;libnodave.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(SolutionDir)\bin\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(SolutionDir)\bin;$(SolutionDir)\bin\$(Configuration);$(SolutionDir)lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AddAreaDlg.cpp" />
+    <ClCompile Include="AddDllThreadNameDlg.cpp" />
+    <ClCompile Include="AddNewRow.cpp" />
+    <ClCompile Include="AddOPCItem.cpp" />
+    <ClCompile Include="AddPageDlg.cpp" />
+    <ClCompile Include="AddVPointBatchDialog.cpp" />
+    <ClCompile Include="AnimationPropertyDlg.cpp" />
+    <ClCompile Include="AnimationView.cpp" />
+    <ClCompile Include="AreaCfgDlg.cpp" />
+    <ClCompile Include="AreaChagePropertyDlg.cpp" />
+    <ClCompile Include="BacnetSetDlg.cpp" />
+    <ClCompile Include="BacnetSettingDlg.cpp" />
+    <ClCompile Include="bacnet\src\abort.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\address.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\ai.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\ao.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\apdu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\arf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\av.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\awf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacaddr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacapp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacdcode.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacdevobjpropref.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacerror.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacfile.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacint.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacprop.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacpropstates.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacreal.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bacstr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bactext.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bi.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bigend.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bip-init.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bip.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bv.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\bvlc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\cov.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\crc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\datalink.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\datetime.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\dcc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\debug.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\device.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\dlenv.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\event.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\fifo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\filename.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_arf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_arf_a.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_awf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_cov.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_dcc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_iam.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_ihave.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_lso.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_npdu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_rd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_rp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_rpm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_rpm_a.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_rp_a.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_rr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_ts.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_ucov.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_whohas.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_whois.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\h_wp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\iam.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\ihave.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\indtext.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\key.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\keylist.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\lc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\lo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\lso.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\lsp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\memcopy.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\ms-input.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\mstptext.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\noserv.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\npdu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\objects.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\ptransfer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\rd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\readrange.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\reject.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\ringbuf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\rp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\rpm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\sbuf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_arfs.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_awfs.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_cov.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_dcc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_iam.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_ihave.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_rd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_router.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_rp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_rpm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_ts.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_uevent.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_whohas.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_whois.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\s_wp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\timestamp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\timesync.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\trendlog.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\tsm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\txbuf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\version.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\whohas.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\whois.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bacnet\src\wp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="BatchPointsDlg.cpp" />
+    <ClCompile Include="BendConfigDlg.cpp" />
+    <ClCompile Include="BendPropertyDlg.cpp" />
+    <ClCompile Include="BEOPGatewayDlg.cpp" />
+    <ClCompile Include="BEOPLogicManager.cpp" />
+    <ClCompile Include="BindPageDiagnoseDlg.cpp" />
+    <ClCompile Include="BindPropertySettingDlg.cpp" />
+    <ClCompile Include="bottcode\advisesink.cpp" />
+    <ClCompile Include="bottcode\datasink20.cpp" />
+    <ClCompile Include="bottcode\globals.cpp" />
+    <ClCompile Include="bottcode\group.cpp" />
+    <ClCompile Include="bottcode\item.cpp" />
+    <ClCompile Include="bottcode\opccomn_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bottcode\opcda_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="bottcode\safearray.cpp" />
+    <ClCompile Include="bottcode\server.cpp" />
+    <ClCompile Include="bottcode\shutdownsink.cpp" />
+    <ClCompile Include="CalcAddItemDlg.cpp" />
+    <ClCompile Include="CalcModulePanel.cpp" />
+    <ClCompile Include="CalcPointProperty.cpp" />
+    <ClCompile Include="CanvasDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ChangePointNameForHistoricalDataDlg.cpp" />
+    <ClCompile Include="ChangeValueDlg.cpp" />
+    <ClCompile Include="ChartItemPropertyDlg.cpp" />
+    <ClCompile Include="ChartPropertyDlg.cpp" />
+    <ClCompile Include="ChartViewer.cpp" />
+    <ClCompile Include="CheckButtonPlusSettingDlg.cpp" />
+    <ClCompile Include="CheckInfoDlg.cpp" />
+    <ClCompile Include="CheckMissImageDlg.cpp" />
+    <ClCompile Include="ChillerSelectDlg.cpp" />
+    <ClCompile Include="CloudSettingDlg.cpp" />
+    <ClCompile Include="ComboToolbar.cpp" />
+    <ClCompile Include="ComManager.cpp" />
+    <ClCompile Include="CommandManager.cpp" />
+    <ClCompile Include="CommBacnetSearch.cpp" />
+    <ClCompile Include="CommOPCSearch.cpp" />
+    <ClCompile Include="CommPLCSearch.cpp" />
+    <ClCompile Include="CompletionData.cpp" />
+    <ClCompile Include="ComponentAcumbarDlg.cpp" />
+    <ClCompile Include="ComponentBigDataAnalysisDlg.cpp" />
+    <ClCompile Include="ComponentDlgBase.cpp" />
+    <ClCompile Include="ComponentEchartsDlg.cpp" />
+    <ClCompile Include="ComponentEnergyDlg.cpp" />
+    <ClCompile Include="ComponentEvaluationBarDlg.cpp" />
+    <ClCompile Include="ComponenthHeatmapTableDlg.cpp" />
+    <ClCompile Include="ComponentModelControlDlg.cpp" />
+    <ClCompile Include="ComponentParamQueryDlg.cpp" />
+    <ClCompile Include="ComponentReportHistoryDlg.cpp" />
+    <ClCompile Include="ComunicationDlg.cpp" />
+    <ClCompile Include="Connect.cpp" />
+    <ClCompile Include="ConnectDlg.cpp" />
+    <ClCompile Include="CoreServiceManageDlg.cpp" />
+    <ClCompile Include="CoreStatusDlg.cpp" />
+    <ClCompile Include="CoreVersionDlg.cpp" />
+    <ClCompile Include="CreateSample.cpp" />
+    <ClCompile Include="CurveTabDlg.cpp" />
+    <ClCompile Include="DashBoardPropertyDlg.cpp" />
+    <ClCompile Include="DataAnalyseItemSetDlg.cpp" />
+    <ClCompile Include="DataAnalyseSettingDlg.cpp" />
+    <ClCompile Include="DatabaseBackupManagerDlg.cpp" />
+    <ClCompile Include="DataComConfigDlg.cpp" />
+    <ClCompile Include="DataPointConfigDlg.cpp" />
+    <ClCompile Include="DataReportSettingDlg.cpp" />
+    <ClCompile Include="DataSampleManageDlg.cpp" />
+    <ClCompile Include="DebugToolFileTransfer.cpp" />
+    <ClCompile Include="DeviceCfgDlg.cpp" />
+    <ClCompile Include="DiagnoseChartPropertySettingPlusDlg.cpp" />
+    <ClCompile Include="DiagnoseGraphicPlusItemPropertySettingDlg.cpp" />
+    <ClCompile Include="DiagnoseItemPropertySettingDlg.cpp" />
+    <ClCompile Include="DiagnosePropertySettingDlg.cpp" />
+    <ClCompile Include="DlgLoad.cpp" />
+    <ClCompile Include="DlgSetting.cpp" />
+    <ClCompile Include="DlgSetting_AccountManagerDlg.cpp" />
+    <ClCompile Include="DlgSetting_EditDlg.cpp" />
+    <ClCompile Include="DlgSetting_OMDlg.cpp" />
+    <ClCompile Include="DlgShowDupOpc.cpp" />
+    <ClCompile Include="DLLObject.cpp" />
+    <ClCompile Include="DomCoreStatusDlg.cpp" />
+    <ClCompile Include="DownLoadFileDlg.cpp" />
+    <ClCompile Include="EditListCtrl.cpp" />
+    <ClCompile Include="EmbededPageSettingDlg.cpp" />
+    <ClCompile Include="EnergySaveRoiSettingDlg.cpp" />
+    <ClCompile Include="EqmRectangleConfigDlg.cpp" />
+    <ClCompile Include="EqmRectangleConfigDlg_BlueWhit.cpp" />
+    <ClCompile Include="EqmRectangleConfigDlg_Rect.cpp" />
+    <ClCompile Include="ExcelOperator.cpp" />
+    <ClCompile Include="ExportBacnetIDDlg.cpp" />
+    <ClCompile Include="ExportHistoricalDataAtPreciseTimeDLg.cpp" />
+    <ClCompile Include="FileDialogEx.cpp" />
+    <ClCompile Include="FileView.cpp" />
+    <ClCompile Include="FindControlledPointSearchInThreadDlg.cpp" />
+    <ClCompile Include="GeneralComponentSettingDlg.cpp" />
+    <ClCompile Include="GenStandardPointNameDlg.cpp" />
+    <ClCompile Include="GraphicInfoDlg.cpp" />
+    <ClCompile Include="gridctrl\GridCell.cpp" />
+    <ClCompile Include="gridctrl\GridCellBase.cpp" />
+    <ClCompile Include="gridctrl\GridCellCombo.cpp" />
+    <ClCompile Include="gridctrl\GridCtrl.cpp" />
+    <ClCompile Include="gridctrl\GridDropTarget.cpp" />
+    <ClCompile Include="gridctrl\InPlaceEdit.cpp" />
+    <ClCompile Include="gridctrl\TitleTip.cpp" />
+    <ClCompile Include="GroupDlg.cpp" />
+    <ClCompile Include="HistoryDataDownloadDlg.cpp" />
+    <ClCompile Include="HistoryTrendItemSetDlg.cpp" />
+    <ClCompile Include="HistoryTrendSettingDlg.cpp" />
+    <ClCompile Include="HttpOperation.cpp" />
+    <ClCompile Include="ImageCheckDlg.cpp" />
+    <ClCompile Include="ImagePreviewDlg.cpp" />
+    <ClCompile Include="ImageReplaceDlg.cpp" />
+    <ClCompile Include="ImportHistoryDataDlg.cpp" />
+    <ClCompile Include="ImportPageSelectDlg.cpp" />
+    <ClCompile Include="ImportSettingDlg.cpp" />
+    <ClCompile Include="ImportTemplateBatchSettingDlg.cpp" />
+    <ClCompile Include="ImportTemplateBatchSettingExDlg.cpp" />
+    <ClCompile Include="ImportTemplatePageDlg.cpp" />
+    <ClCompile Include="ImportTemplateSettingDlg.cpp" />
+    <ClCompile Include="ImportTipsDlg.cpp" />
+    <ClCompile Include="InputConditionDlg.cpp" />
+    <ClCompile Include="InputLogicNameDlg.cpp" />
+    <ClCompile Include="InputLogicPeriodDlg.cpp" />
+    <ClCompile Include="InputParamDlg.cpp" />
+    <ClCompile Include="InputPipeWidthDlg.cpp" />
+    <ClCompile Include="InputRedundencyIPDlg.cpp" />
+    <ClCompile Include="InputTextDlg.cpp" />
+    <ClCompile Include="json\json_reader.cpp" />
+    <ClCompile Include="json\json_value.cpp" />
+    <ClCompile Include="json\json_writer.cpp" />
+    <ClCompile Include="LayerManageDlg.cpp" />
+    <ClCompile Include="LevelRulerItemSetDlg.cpp" />
+    <ClCompile Include="LevelRulerSectionSetDlg.cpp" />
+    <ClCompile Include="LevelRulerSettingDlg.cpp" />
+    <ClCompile Include="LiquidLevelSettingDlg.cpp" />
+    <ClCompile Include="ListCtrlEdit.cpp" />
+    <ClCompile Include="LoadingProjectDlg.cpp" />
+    <ClCompile Include="LocalConfigManageDlg.cpp" />
+    <ClCompile Include="LogicDllThread.cpp" />
+    <ClCompile Include="LogicHistoryRunDlg.cpp" />
+    <ClCompile Include="LogicParameter.cpp" />
+    <ClCompile Include="LogicParameterConst.cpp" />
+    <ClCompile Include="LogicParameterPoint.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MapNavigateItemSetDlg.cpp" />
+    <ClCompile Include="MapNavigateSettingDlg.cpp" />
+    <ClCompile Include="MetaBtnSetDlg.cpp" />
+    <ClCompile Include="MetaButtonSelectDlg.cpp" />
+    <ClCompile Include="MetaFileInfoDlg.cpp" />
+    <ClCompile Include="MetaFileSelectDlg.cpp" />
+    <ClCompile Include="MetaFileView.cpp" />
+    <ClCompile Include="MeterPanSelectDlg.cpp" />
+    <ClCompile Include="ModbusComConfigDlg.cpp" />
+    <ClCompile Include="ModifyHisData.cpp" />
+    <ClCompile Include="ModifyRelationDlg.cpp" />
+    <ClCompile Include="ModifyReport.cpp" />
+    <ClCompile Include="NavigateWindowItemSetDlg.cpp" />
+    <ClCompile Include="NavigateWindowSettingDlg.cpp" />
+    <ClCompile Include="NewCHPointsDlg.cpp" />
+    <ClCompile Include="NewControlPointsDlg.cpp" />
+    <ClCompile Include="NewCTPointsDlg.cpp" />
+    <ClCompile Include="NewCWPPointsDlg.cpp" />
+    <ClCompile Include="NewEquipmentPointsDlg.cpp" />
+    <ClCompile Include="NewPriChWPPointsDlg.cpp" />
+    <ClCompile Include="NewPriHWPPointsDlg.cpp" />
+    <ClCompile Include="NewProcessMonitorDlg.cpp" />
+    <ClCompile Include="NewProjectDlg.cpp" />
+    <ClCompile Include="NewSecChWPPointsDlg.cpp" />
+    <ClCompile Include="NewSecHWPPointsDlg.cpp" />
+    <ClCompile Include="NewStatisticsPointsDlg.cpp" />
+    <ClCompile Include="NewVPointDlg.cpp" />
+    <ClCompile Include="NoModelDlg.cpp" />
+    <ClCompile Include="oleExcel\OperateExcelFile.cpp" />
+    <ClCompile Include="OPCCtrl.cpp" />
+    <ClCompile Include="OPCSetting.cpp" />
+    <ClCompile Include="OPCSettingDlg.cpp" />
+    <ClCompile Include="OPC_Connection.cpp" />
+    <ClCompile Include="OpRecordHistoryDlg.cpp" />
+    <ClCompile Include="PageAreaShow.cpp" />
+    <ClCompile Include="PageDeviceShow.cpp" />
+    <ClCompile Include="PageDlg.cpp" />
+    <ClCompile Include="PageReplaceLinkName.cpp" />
+    <ClCompile Include="PageReplacePointName.cpp" />
+    <ClCompile Include="PaneArbiter.cpp" />
+    <ClCompile Include="PaneServerManager.cpp" />
+    <ClCompile Include="PathDialog.cpp" />
+    <ClCompile Include="PictureTypeSelectDlg.cpp" />
+    <ClCompile Include="PIFEditDlg.cpp" />
+    <ClCompile Include="PIFManageDlg.cpp" />
+    <ClCompile Include="PipeInfoDlg.cpp" />
+    <ClCompile Include="PlaneTempeDistrSettingDlg.cpp" />
+    <ClCompile Include="PointDialog.cpp" />
+    <ClCompile Include="PointEditAPISelect.cpp" />
+    <ClCompile Include="PointHisdataDlg.cpp" />
+    <ClCompile Include="PointIgnoreDefDlg.cpp" />
+    <ClCompile Include="PointInfoDlg.cpp" />
+    <ClCompile Include="PointParamEditDlg.cpp" />
+    <ClCompile Include="ProgressBarProperty.cpp" />
+    <ClCompile Include="ProjectCheckDlg.cpp" />
+    <ClCompile Include="PropertiesWnd.cpp" />
+    <ClCompile Include="RealTimeTrendDlg.cpp" />
+    <ClCompile Include="RectanglePointInfoDlg.cpp" />
+    <ClCompile Include="RelationItemSettingDlg.cpp" />
+    <ClCompile Include="ReloadLogin.cpp" />
+    <ClCompile Include="RemoveHisData.cpp" />
+    <ClCompile Include="ReplacePointName.cpp" />
+    <ClCompile Include="ReportCtrl.cpp" />
+    <ClCompile Include="ReportInfo.cpp" />
+    <ClCompile Include="ReportManageDlg.cpp" />
+    <ClCompile Include="S7UDPCtrl.cpp" />
+    <ClCompile Include="SaveVersionDlg.cpp" />
+    <ClCompile Include="ScrawlItemSetDlg.cpp" />
+    <ClCompile Include="ScrawlSettingDlg.cpp" />
+    <ClCompile Include="SearchLogicOutputDlg.cpp" />
+    <ClCompile Include="SearchStrategyDlg.cpp" />
+    <ClCompile Include="SearchStrategyInTimeAgeRunDlg.cpp" />
+    <ClCompile Include="SelectBacnetDlg.cpp" />
+    <ClCompile Include="SelectDataComId.cpp" />
+    <ClCompile Include="SelectPointDlg.cpp" />
+    <ClCompile Include="SelectTimeDlg.cpp" />
+    <ClCompile Include="SetBacnet.cpp" />
+    <ClCompile Include="SetConstValueDlg.cpp" />
+    <ClCompile Include="SetDatabase.cpp" />
+    <ClCompile Include="SetDebug.cpp" />
+    <ClCompile Include="SetDTU.cpp" />
+    <ClCompile Include="SetEqmPositionDlg.cpp" />
+    <ClCompile Include="SetModbus.cpp" />
+    <ClCompile Include="SetOPC.cpp" />
+    <ClCompile Include="SetParameterDlg.cpp" />
+    <ClCompile Include="SetRemote.cpp" />
+    <ClCompile Include="SetRunParam.cpp" />
+    <ClCompile Include="SetSiemens.cpp" />
+    <ClCompile Include="SetTable.cpp" />
+    <ClCompile Include="SetUpDataDlg.cpp" />
+    <ClCompile Include="SetWatch.cpp" />
+    <ClCompile Include="SheetDeviceArea.cpp" />
+    <ClCompile Include="ShellExecuteSettingDlg.cpp" />
+    <ClCompile Include="SoftPreferenceDlg.cpp" />
+    <ClCompile Include="StandardEquip.cpp" />
+    <ClCompile Include="StateChangeDlg.cpp" />
+    <ClCompile Include="StoreCycleSettingDlg.cpp" />
+    <ClCompile Include="SubItemPropertySettingDlg.cpp" />
+    <ClCompile Include="SystemDefineDlg.cpp" />
+    <ClCompile Include="SystemDefineDlg_Child_List.cpp" />
+    <ClCompile Include="SystemDefineDlg_Child_Script.cpp" />
+    <ClCompile Include="SystemTactics.cpp" />
+    <ClCompile Include="TacticLogQueryDlg.cpp" />
+    <ClCompile Include="TemperDistriItemSetDlg.cpp" />
+    <ClCompile Include="TemperDistriSettingDlg.cpp" />
+    <ClCompile Include="TemplateDlg.cpp" />
+    <ClCompile Include="TextInfoDlg.cpp" />
+    <ClCompile Include="BEOP-Designer.cpp" />
+    <ClCompile Include="BEOP-DesignerDoc.cpp" />
+    <ClCompile Include="BEOP-DesignerView.cpp" />
+    <ClCompile Include="ThreadPeriodicitySet.cpp" />
+    <ClCompile Include="TimeBarItemPropertyDlg.cpp" />
+    <ClCompile Include="TimeBarPropertyDlg.cpp" />
+    <ClCompile Include="TimePickDlg.cpp" />
+    <ClCompile Include="TimeSelectPropertyDlg.cpp" />
+    <ClCompile Include="TreeCtrlEx.cpp" />
+    <ClCompile Include="TreeGroupSettingDlg.cpp" />
+    <ClCompile Include="TreeManageDlg.cpp" />
+    <ClCompile Include="ValveSelectDlg.cpp" />
+    <ClCompile Include="VersionHistoryDlg.cpp" />
+    <ClCompile Include="ViewTree.cpp" />
+    <ClCompile Include="VisualStylesXP.cpp" />
+    <ClCompile Include="VPointHistoricalDataCalculation.cpp" />
+    <ClCompile Include="VPointSettingDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="utilmakedlg.cpp" />
+    <ClCompile Include="VPointSimpleSettingDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddAreaDlg.h" />
+    <ClInclude Include="AddDllThreadNameDlg.h" />
+    <ClInclude Include="AddNewRow.h" />
+    <ClInclude Include="AddOPCItem.h" />
+    <ClInclude Include="AddPageDlg.h" />
+    <ClInclude Include="AddVPointBatchDialog.h" />
+    <ClInclude Include="AnimationPropertyDlg.h" />
+    <ClInclude Include="AnimationView.h" />
+    <ClInclude Include="AreaCfgDlg.h" />
+    <ClInclude Include="AreaChagePropertyDlg.h" />
+    <ClInclude Include="BacnetSetDlg.h" />
+    <ClInclude Include="BacnetSettingDlg.h" />
+    <ClInclude Include="bacnet\include\abort.h" />
+    <ClInclude Include="bacnet\include\address.h" />
+    <ClInclude Include="bacnet\include\ai.h" />
+    <ClInclude Include="bacnet\include\alarm_ack.h" />
+    <ClInclude Include="bacnet\include\ao.h" />
+    <ClInclude Include="bacnet\include\apdu.h" />
+    <ClInclude Include="bacnet\include\arcnet.h" />
+    <ClInclude Include="bacnet\include\arf.h" />
+    <ClInclude Include="bacnet\include\av.h" />
+    <ClInclude Include="bacnet\include\awf.h" />
+    <ClInclude Include="bacnet\include\bacaddr.h" />
+    <ClInclude Include="bacnet\include\bacapp.h" />
+    <ClInclude Include="bacnet\include\bacdcode.h" />
+    <ClInclude Include="bacnet\include\bacdef.h" />
+    <ClInclude Include="bacnet\include\bacdevobjpropref.h" />
+    <ClInclude Include="bacnet\include\bacenum.h" />
+    <ClInclude Include="bacnet\include\bacerror.h" />
+    <ClInclude Include="bacnet\include\bacfile.h" />
+    <ClInclude Include="bacnet\include\bacint.h" />
+    <ClInclude Include="bacnet\include\bacnet.h" />
+    <ClInclude Include="bacnet\include\bacprop.h" />
+    <ClInclude Include="bacnet\include\bacpropstates.h" />
+    <ClInclude Include="bacnet\include\bacreal.h" />
+    <ClInclude Include="bacnet\include\bacstr.h" />
+    <ClInclude Include="bacnet\include\bactext.h" />
+    <ClInclude Include="bacnet\include\bi.h" />
+    <ClInclude Include="bacnet\include\bigend.h" />
+    <ClInclude Include="bacnet\include\bip.h" />
+    <ClInclude Include="bacnet\include\bits.h" />
+    <ClInclude Include="bacnet\include\bo.h" />
+    <ClInclude Include="bacnet\include\bv.h" />
+    <ClInclude Include="bacnet\include\bvlc.h" />
+    <ClInclude Include="bacnet\include\bytes.h" />
+    <ClInclude Include="bacnet\include\client.h" />
+    <ClInclude Include="bacnet\include\config.h" />
+    <ClInclude Include="bacnet\include\cov.h" />
+    <ClInclude Include="bacnet\include\crc.h" />
+    <ClInclude Include="bacnet\include\datalink.h" />
+    <ClInclude Include="bacnet\include\datetime.h" />
+    <ClInclude Include="bacnet\include\dcc.h" />
+    <ClInclude Include="bacnet\include\debug.h" />
+    <ClInclude Include="bacnet\include\device.h" />
+    <ClInclude Include="bacnet\include\dlenv.h" />
+    <ClInclude Include="bacnet\include\dlmstp.h" />
+    <ClInclude Include="bacnet\include\ethernet.h" />
+    <ClInclude Include="bacnet\include\event.h" />
+    <ClInclude Include="bacnet\include\fifo.h" />
+    <ClInclude Include="bacnet\include\filename.h" />
+    <ClInclude Include="bacnet\include\getevent.h" />
+    <ClInclude Include="bacnet\include\handlers.h" />
+    <ClInclude Include="bacnet\include\iam.h" />
+    <ClInclude Include="bacnet\include\ihave.h" />
+    <ClInclude Include="bacnet\include\indtext.h" />
+    <ClInclude Include="bacnet\include\key.h" />
+    <ClInclude Include="bacnet\include\keylist.h" />
+    <ClInclude Include="bacnet\include\lc.h" />
+    <ClInclude Include="bacnet\include\lo.h" />
+    <ClInclude Include="bacnet\include\lso.h" />
+    <ClInclude Include="bacnet\include\lsp.h" />
+    <ClInclude Include="bacnet\include\memcopy.h" />
+    <ClInclude Include="bacnet\include\ms-input.h" />
+    <ClInclude Include="bacnet\include\mso.h" />
+    <ClInclude Include="bacnet\include\mstp.h" />
+    <ClInclude Include="bacnet\include\mstpdef.h" />
+    <ClInclude Include="bacnet\include\mstptext.h" />
+    <ClInclude Include="bacnet\include\mydata.h" />
+    <ClInclude Include="bacnet\include\net.h" />
+    <ClInclude Include="bacnet\include\npdu.h" />
+    <ClInclude Include="bacnet\include\objects.h" />
+    <ClInclude Include="bacnet\include\ptransfer.h" />
+    <ClInclude Include="bacnet\include\rd.h" />
+    <ClInclude Include="bacnet\include\readrange.h" />
+    <ClInclude Include="bacnet\include\reject.h" />
+    <ClInclude Include="bacnet\include\ringbuf.h" />
+    <ClInclude Include="bacnet\include\rp.h" />
+    <ClInclude Include="bacnet\include\rpm.h" />
+    <ClInclude Include="bacnet\include\rs485.h" />
+    <ClInclude Include="bacnet\include\sbuf.h" />
+    <ClInclude Include="bacnet\include\stdbool.h" />
+    <ClInclude Include="bacnet\include\stdint.h" />
+    <ClInclude Include="bacnet\include\timer.h" />
+    <ClInclude Include="bacnet\include\timestamp.h" />
+    <ClInclude Include="bacnet\include\timesync.h" />
+    <ClInclude Include="bacnet\include\trendlog.h" />
+    <ClInclude Include="bacnet\include\tsm.h" />
+    <ClInclude Include="bacnet\include\txbuf.h" />
+    <ClInclude Include="bacnet\include\version.h" />
+    <ClInclude Include="bacnet\include\whohas.h" />
+    <ClInclude Include="bacnet\include\whois.h" />
+    <ClInclude Include="bacnet\include\wp.h" />
+    <ClInclude Include="BatchPointsDlg.h" />
+    <ClInclude Include="bchartdir.h" />
+    <ClInclude Include="BendConfigDlg.h" />
+    <ClInclude Include="BendPropertyDlg.h" />
+    <ClInclude Include="BEOPGatewayDlg.h" />
+    <ClInclude Include="BEOPLogicManager.h" />
+    <ClInclude Include="BindPageDiagnoseDlg.h" />
+    <ClInclude Include="BindPropertySettingDlg.h" />
+    <ClInclude Include="bottcode\advisesink.h" />
+    <ClInclude Include="bottcode\datasink20.h" />
+    <ClInclude Include="bottcode\globals.h" />
+    <ClInclude Include="bottcode\group.h" />
+    <ClInclude Include="bottcode\item.h" />
+    <ClInclude Include="bottcode\opccomn.h" />
+    <ClInclude Include="bottcode\opcda.h" />
+    <ClInclude Include="bottcode\OPCdefine.h" />
+    <ClInclude Include="bottcode\opcerrors.h" />
+    <ClInclude Include="bottcode\opcprops.h" />
+    <ClInclude Include="bottcode\opcquality.h" />
+    <ClInclude Include="bottcode\safearray.h" />
+    <ClInclude Include="bottcode\safelock.h" />
+    <ClInclude Include="bottcode\server.h" />
+    <ClInclude Include="bottcode\shutdownsink.h" />
+    <ClInclude Include="CalcAddItemDlg.h" />
+    <ClInclude Include="CalcModulePanel.h" />
+    <ClInclude Include="CalcPointProperty.h" />
+    <ClInclude Include="CanvasDlg.h" />
+    <ClInclude Include="ChangePointNameForHistoricalDataDlg.h" />
+    <ClInclude Include="ChangeValueDlg.h" />
+    <ClInclude Include="chartdir.h" />
+    <ClInclude Include="ChartItemPropertyDlg.h" />
+    <ClInclude Include="ChartPropertyDlg.h" />
+    <ClInclude Include="ChartViewer.h" />
+    <ClInclude Include="CheckButtonPlusSettingDlg.h" />
+    <ClInclude Include="CheckInfoDlg.h" />
+    <ClInclude Include="CheckMissImageDlg.h" />
+    <ClInclude Include="ChillerSelectDlg.h" />
+    <ClInclude Include="CloudSettingDlg.h" />
+    <ClInclude Include="ComboToolbar.h" />
+    <ClInclude Include="ComManager.h" />
+    <ClInclude Include="CommandManager.h" />
+    <ClInclude Include="CommBacnetSearch.h" />
+    <ClInclude Include="CommOPCSearch.h" />
+    <ClInclude Include="CommPLCSearch.h" />
+    <ClInclude Include="CompletionData.h" />
+    <ClInclude Include="ComponentAcumbarDlg.h" />
+    <ClInclude Include="ComponentBigDataAnalysisDlg.h" />
+    <ClInclude Include="ComponentDlgBase.h" />
+    <ClInclude Include="ComponentEchartsDlg.h" />
+    <ClInclude Include="ComponentEnergyDlg.h" />
+    <ClInclude Include="ComponentEvaluationBarDlg.h" />
+    <ClInclude Include="ComponenthHeatmapTableDlg.h" />
+    <ClInclude Include="ComponentModelControlDlg.h" />
+    <ClInclude Include="ComponentParamQueryDlg.h" />
+    <ClInclude Include="ComponentReportHistoryDlg.h" />
+    <ClInclude Include="ComunicationDlg.h" />
+    <ClInclude Include="Connect.h" />
+    <ClInclude Include="ConnectDlg.h" />
+    <ClInclude Include="CoreServiceManageDlg.h" />
+    <ClInclude Include="CoreStatusDlg.h" />
+    <ClInclude Include="CoreVersionDlg.h" />
+    <ClInclude Include="CreateSample.h" />
+    <ClInclude Include="CurveTabDlg.h" />
+    <ClInclude Include="DashBoardPropertyDlg.h" />
+    <ClInclude Include="DataAnalyseItemSetDlg.h" />
+    <ClInclude Include="DataAnalyseSettingDlg.h" />
+    <ClInclude Include="DatabaseBackupManagerDlg.h" />
+    <ClInclude Include="DataComConfigDlg.h" />
+    <ClInclude Include="DataPointConfigDlg.h" />
+    <ClInclude Include="DataReportSettingDlg.h" />
+    <ClInclude Include="DataSampleManageDlg.h" />
+    <ClInclude Include="DebugToolFileTransfer.h" />
+    <ClInclude Include="DeviceCfgDlg.h" />
+    <ClInclude Include="DiagnoseChartPropertySettingPlusDlg.h" />
+    <ClInclude Include="DiagnoseGraphicPlusItemPropertySettingDlg.h" />
+    <ClInclude Include="DiagnoseItemPropertySettingDlg.h" />
+    <ClInclude Include="DiagnosePropertySettingDlg.h" />
+    <ClInclude Include="DlgLoad.h" />
+    <ClInclude Include="DlgSetting.h" />
+    <ClInclude Include="DlgSetting_AccountManagerDlg.h" />
+    <ClInclude Include="DlgSetting_EditDlg.h" />
+    <ClInclude Include="DlgSetting_OMDlg.h" />
+    <ClInclude Include="DlgShowDupOpc.h" />
+    <ClInclude Include="DLLObject.h" />
+    <ClInclude Include="DomCoreStatusDlg.h" />
+    <ClInclude Include="DownLoadFileDlg.h" />
+    <ClInclude Include="EditListCtrl.h" />
+    <ClInclude Include="EmbededPageSettingDlg.h" />
+    <ClInclude Include="EnergySaveRoiSettingDlg.h" />
+    <ClInclude Include="EqmRectangleConfigDlg.h" />
+    <ClInclude Include="EqmRectangleConfigDlg_BlueWhit.h" />
+    <ClInclude Include="EqmRectangleConfigDlg_Rect.h" />
+    <ClInclude Include="ExcelOperator.h" />
+    <ClInclude Include="ExportBacnetIDDlg.h" />
+    <ClInclude Include="ExportHistoricalDataAtPreciseTimeDLg.h" />
+    <ClInclude Include="FileDialogEx.h" />
+    <ClInclude Include="FileView.h" />
+    <ClInclude Include="FindControlledPointSearchInThreadDlg.h" />
+    <ClInclude Include="GeneralComponentSettingDlg.h" />
+    <ClInclude Include="GenStandardPointNameDlg.h" />
+    <ClInclude Include="GraphicInfoDlg.h" />
+    <ClInclude Include="gridctrl\CellRange.h" />
+    <ClInclude Include="gridctrl\GridCell.h" />
+    <ClInclude Include="gridctrl\GridCellBase.h" />
+    <ClInclude Include="gridctrl\GridCellCombo.h" />
+    <ClInclude Include="gridctrl\GridCtrl.h" />
+    <ClInclude Include="gridctrl\GridDropTarget.h" />
+    <ClInclude Include="gridctrl\InPlaceEdit.h" />
+    <ClInclude Include="gridctrl\MemDCGridCtrl.h" />
+    <ClInclude Include="gridctrl\TitleTip.h" />
+    <ClInclude Include="GroupDlg.h" />
+    <ClInclude Include="HistoryDataDownloadDlg.h" />
+    <ClInclude Include="HistoryTrendItemSetDlg.h" />
+    <ClInclude Include="HistoryTrendSettingDlg.h" />
+    <ClInclude Include="HttpOperation.h" />
+    <ClInclude Include="ImageCheckDlg.h" />
+    <ClInclude Include="ImagePreviewDlg.h" />
+    <ClInclude Include="ImageReplaceDlg.h" />
+    <ClInclude Include="ImportHistoryDataDlg.h" />
+    <ClInclude Include="ImportPageSelectDlg.h" />
+    <ClInclude Include="ImportSettingDlg.h" />
+    <ClInclude Include="ImportTemplateBatchSettingDlg.h" />
+    <ClInclude Include="ImportTemplateBatchSettingExDlg.h" />
+    <ClInclude Include="ImportTemplatePageDlg.h" />
+    <ClInclude Include="ImportTemplateSettingDlg.h" />
+    <ClInclude Include="ImportTipsDlg.h" />
+    <ClInclude Include="InputConditionDlg.h" />
+    <ClInclude Include="InputLogicNameDlg.h" />
+    <ClInclude Include="InputLogicPeriodDlg.h" />
+    <ClInclude Include="InputParamDlg.h" />
+    <ClInclude Include="InputPipeWidthDlg.h" />
+    <ClInclude Include="InputRedundencyIPDlg.h" />
+    <ClInclude Include="InputTextDlg.h" />
+    <ClInclude Include="json\autolink.h" />
+    <ClInclude Include="json\config.h" />
+    <ClInclude Include="json\features.h" />
+    <ClInclude Include="json\forwards.h" />
+    <ClInclude Include="json\json.h" />
+    <ClInclude Include="json\json_batchallocator.h" />
+    <ClInclude Include="json\reader.h" />
+    <ClInclude Include="json\value.h" />
+    <ClInclude Include="json\writer.h" />
+    <ClInclude Include="LayerManageDlg.h" />
+    <ClInclude Include="LevelRulerItemSetDlg.h" />
+    <ClInclude Include="LevelRulerSectionSetDlg.h" />
+    <ClInclude Include="LevelRulerSettingDlg.h" />
+    <ClInclude Include="LiquidLevelSettingDlg.h" />
+    <ClInclude Include="ListCtrlEdit.h" />
+    <ClInclude Include="LoadingProjectDlg.h" />
+    <ClInclude Include="LocalConfigManageDlg.h" />
+    <ClInclude Include="LogicBase.h" />
+    <ClInclude Include="LogicDllThread.h" />
+    <ClInclude Include="LogicHistoryRunDlg.h" />
+    <ClInclude Include="LogicParameter.h" />
+    <ClInclude Include="LogicParameterConst.h" />
+    <ClInclude Include="LogicParameterPoint.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MapNavigateItemSetDlg.h" />
+    <ClInclude Include="MapNavigateSettingDlg.h" />
+    <ClInclude Include="memdc.h" />
+    <ClInclude Include="MetaBtnSetDlg.h" />
+    <ClInclude Include="MetaButtonSelectDlg.h" />
+    <ClInclude Include="MetaFileInfoDlg.h" />
+    <ClInclude Include="MetaFileSelectDlg.h" />
+    <ClInclude Include="MetaFileView.h" />
+    <ClInclude Include="MeterPanSelectDlg.h" />
+    <ClInclude Include="ModbusComConfigDlg.h" />
+    <ClInclude Include="ModifyHisData.h" />
+    <ClInclude Include="ModifyRelationDlg.h" />
+    <ClInclude Include="ModifyReport.h" />
+    <ClInclude Include="NavigateWindowItemSetDlg.h" />
+    <ClInclude Include="NavigateWindowSettingDlg.h" />
+    <ClInclude Include="NewCHPointsDlg.h" />
+    <ClInclude Include="NewControlPointsDlg.h" />
+    <ClInclude Include="NewCTPointsDlg.h" />
+    <ClInclude Include="NewCWPPointsDlg.h" />
+    <ClInclude Include="NewEquipmentPointsDlg.h" />
+    <ClInclude Include="NewPriChWPPointsDlg.h" />
+    <ClInclude Include="NewPriHWPPointsDlg.h" />
+    <ClInclude Include="NewProcessMonitorDlg.h" />
+    <ClInclude Include="NewProjectDlg.h" />
+    <ClInclude Include="NewSecChWPPointsDlg.h" />
+    <ClInclude Include="NewSecHWPPointsDlg.h" />
+    <ClInclude Include="NewStatisticsPointsDlg.h" />
+    <ClInclude Include="NewVPointDlg.h" />
+    <ClInclude Include="nodaveinclude\log2.h" />
+    <ClInclude Include="nodaveinclude\nodave.h" />
+    <ClInclude Include="nodaveinclude\nodaveext.h" />
+    <ClInclude Include="nodaveinclude\nodavesimple.h" />
+    <ClInclude Include="nodaveinclude\openS7online.h" />
+    <ClInclude Include="nodaveinclude\openSocket.h" />
+    <ClInclude Include="nodaveinclude\resource.h" />
+    <ClInclude Include="nodaveinclude\setport.h" />
+    <ClInclude Include="nodaveinclude\usbGlue.h" />
+    <ClInclude Include="NoModelDlg.h" />
+    <ClInclude Include="oleExcel\CApplication.h" />
+    <ClInclude Include="oleExcel\CRange.h" />
+    <ClInclude Include="oleExcel\CWorkbook.h" />
+    <ClInclude Include="oleExcel\CWorkbooks.h" />
+    <ClInclude Include="oleExcel\CWorksheet.h" />
+    <ClInclude Include="oleExcel\CWorksheets.h" />
+    <ClInclude Include="oleExcel\OperateExcelFile.h" />
+    <ClInclude Include="OPCCtrl.h" />
+    <ClInclude Include="OPCSetting.h" />
+    <ClInclude Include="OPCSettingDlg.h" />
+    <ClInclude Include="OPC_Connection.h" />
+    <ClInclude Include="OpRecordHistoryDlg.h" />
+    <ClInclude Include="PageAreaShow.h" />
+    <ClInclude Include="PageDeviceShow.h" />
+    <ClInclude Include="PageDlg.h" />
+    <ClInclude Include="PageReplaceLinkName.h" />
+    <ClInclude Include="PageReplacePointName.h" />
+    <ClInclude Include="PaneArbiter.h" />
+    <ClInclude Include="PaneServerManager.h" />
+    <ClInclude Include="PathDialog.h" />
+    <ClInclude Include="PictureTypeSelectDlg.h" />
+    <ClInclude Include="PIFEditDlg.h" />
+    <ClInclude Include="PIFManageDlg.h" />
+    <ClInclude Include="PipeInfoDlg.h" />
+    <ClInclude Include="PlaneTempeDistrSettingDlg.h" />
+    <ClInclude Include="PointDialog.h" />
+    <ClInclude Include="PointEditAPISelect.h" />
+    <ClInclude Include="PointHisdataDlg.h" />
+    <ClInclude Include="PointIgnoreDefDlg.h" />
+    <ClInclude Include="PointInfoDlg.h" />
+    <ClInclude Include="PointParamEditDlg.h" />
+    <ClInclude Include="ProgressBarProperty.h" />
+    <ClInclude Include="ProjectCheckDlg.h" />
+    <ClInclude Include="PropertiesWnd.h" />
+    <ClInclude Include="RealTimeTrendDlg.h" />
+    <ClInclude Include="RectanglePointInfoDlg.h" />
+    <ClInclude Include="RelationItemSettingDlg.h" />
+    <ClInclude Include="ReloadLogin.h" />
+    <ClInclude Include="RemoveHisData.h" />
+    <ClInclude Include="ReplacePointName.h" />
+    <ClInclude Include="ReportCtrl.h" />
+    <ClInclude Include="ReportInfo.h" />
+    <ClInclude Include="ReportManageDlg.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="S7UDPCtrl.h" />
+    <ClInclude Include="SaveVersionDlg.h" />
+    <ClInclude Include="ScrawlItemSetDlg.h" />
+    <ClInclude Include="ScrawlSettingDlg.h" />
+    <ClInclude Include="SearchLogicOutputDlg.h" />
+    <ClInclude Include="SearchStrategyDlg.h" />
+    <ClInclude Include="SearchStrategyInTimeAgeRunDlg.h" />
+    <ClInclude Include="SelectBacnetDlg.h" />
+    <ClInclude Include="SelectDataComId.h" />
+    <ClInclude Include="SelectPointDlg.h" />
+    <ClInclude Include="SelectTimeDlg.h" />
+    <ClInclude Include="SetBacnet.h" />
+    <ClInclude Include="SetConstValueDlg.h" />
+    <ClInclude Include="SetDatabase.h" />
+    <ClInclude Include="SetDebug.h" />
+    <ClInclude Include="SetDTU.h" />
+    <ClInclude Include="SetEqmPositionDlg.h" />
+    <ClInclude Include="SetModbus.h" />
+    <ClInclude Include="SetOPC.h" />
+    <ClInclude Include="SetParameterDlg.h" />
+    <ClInclude Include="SetRemote.h" />
+    <ClInclude Include="SetRunParam.h" />
+    <ClInclude Include="SetSiemens.h" />
+    <ClInclude Include="SetTable.h" />
+    <ClInclude Include="SetUpDataDlg.h" />
+    <ClInclude Include="SetWatch.h" />
+    <ClInclude Include="SheetDeviceArea.h" />
+    <ClInclude Include="ShellExecuteSettingDlg.h" />
+    <ClInclude Include="SoftPreferenceDlg.h" />
+    <ClInclude Include="StandardEquip.h" />
+    <ClInclude Include="StateChangeDlg.h" />
+    <ClInclude Include="StoreCycleSettingDlg.h" />
+    <ClInclude Include="SubItemPropertySettingDlg.h" />
+    <ClInclude Include="SystemDefineDlg.h" />
+    <ClInclude Include="SystemDefineDlg_Child_List.h" />
+    <ClInclude Include="SystemDefineDlg_Child_Script.h" />
+    <ClInclude Include="SystemTactics.h" />
+    <ClInclude Include="TacticLogQueryDlg.h" />
+    <ClInclude Include="TemperDistriItemSetDlg.h" />
+    <ClInclude Include="TemperDistriSettingDlg.h" />
+    <ClInclude Include="TemplateDlg.h" />
+    <ClInclude Include="TextInfoDlg.h" />
+    <ClInclude Include="ThreadPeriodicitySet.h" />
+    <ClInclude Include="TimeBarItemPropertyDlg.h" />
+    <ClInclude Include="TimeBarPropertyDlg.h" />
+    <ClInclude Include="TimePickDlg.h" />
+    <ClInclude Include="TimeSelectPropertyDlg.h" />
+    <ClInclude Include="TreeCtrlEx.h" />
+    <ClInclude Include="TreeGroupSettingDlg.h" />
+    <ClInclude Include="TreeManageDlg.h" />
+    <ClInclude Include="BEOP-DesignerDoc.h" />
+    <ClInclude Include="BEOP-DesignerView.h" />
+    <ClInclude Include="BEOP-designer.h" />
+    <ClInclude Include="UtilMakeDlg.h" />
+    <ClInclude Include="ValveSelectDlg.h" />
+    <ClInclude Include="VersionHistoryDlg.h" />
+    <ClInclude Include="ViewTree.h" />
+    <ClInclude Include="VisualStylesXP.h" />
+    <ClInclude Include="VPointHistoricalDataCalculation.h" />
+    <ClInclude Include="VPointSettingDlg.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="VPointSimpleSettingDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Tree\res\check_32px_1133814_easyicon.net.ico" />
+    <None Include="..\Tree\res\IDI_ICON_TREE_COM1.ico" />
+    <None Include="..\Tree\res\IDI_ICON_TREE_COM2.ico" />
+    <None Include="..\Tree\res\IDI_MANAGEMENT.ico" />
+    <None Include="..\Tree\res\IDI_MANAGER.ico" />
+    <None Include="..\Tree\res\IDI_USER.ico" />
+    <None Include="bacnet\src\ao.mak" />
+    <None Include="bacnet\src\lc.ide" />
+    <None Include="bacnet\src\lc.mak" />
+    <None Include="bacnet\src\lo.mak" />
+    <None Include="bacnet\src\lsp.mak" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="json\json_valueiterator.inl" />
+    <None Include="resource.hm" />
+    <None Include="res\20140515083454572_easyicon_net_16.ico" />
+    <None Include="res\20140515083804294_easyicon_net_16.ico" />
+    <None Include="res\20140515083820172_easyicon_net_16.ico" />
+    <None Include="res\20140515083847460_easyicon_net_16.ico" />
+    <None Include="res\20140515084148977_easyicon_net_16.ico" />
+    <None Include="res\BEOP-Designer.ico" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bitmap2.bmp" />
+    <None Include="res\bitmap5.bmp" />
+    <None Include="res\bitmap7.bmp" />
+    <None Include="res\bitmap8.bmp" />
+    <None Include="res\bitmap9.bmp" />
+    <None Include="res\bluearrow.cur" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\boolbtn.cur" />
+    <None Include="res\checkmark_round_32px_13222_easyicon.net.ico" />
+    <None Include="res\check_32px_1133814_easyicon.net.ico" />
+    <None Include="res\chiller.cur" />
+    <None Include="res\ct.cur" />
+    <None Include="res\cursor1.cur" />
+    <None Include="res\cursor2.cur" />
+    <None Include="res\cursor3.cur" />
+    <None Include="res\cursor_ahu.cur" />
+    <None Include="res\cursor_mvduct.cur" />
+    <None Include="res\cursor_powermeter.cur" />
+    <None Include="res\cursor_pressure.cur" />
+    <None Include="res\cursor_returnfan.cur" />
+    <None Include="res\cursor_supplyfan.cur" />
+    <None Include="res\cursor_TH.cur" />
+    <None Include="res\decbtn.cur" />
+    <None Include="res\Device.bmp" />
+    <None Include="res\Device1.bmp" />
+    <None Include="res\downArrow.bmp" />
+    <None Include="res\explorer.bmp" />
+    <None Include="res\Factory.ico" />
+    <None Include="res\fileview.bmp" />
+    <None Include="res\file_vie.bmp" />
+    <None Include="res\file_view.ico" />
+    <None Include="res\file_view_hc.ico" />
+    <None Include="res\flow.cur" />
+    <None Include="res\geolocation_32px_1133822_easyicon.net.ico" />
+    <None Include="res\greenlight.cur" />
+    <None Include="res\hand.cur" />
+    <None Include="res\icon17.ico" />
+    <None Include="res\ICO_floatingpage.ico" />
+    <None Include="res\ICO_fullpage.ico" />
+    <None Include="res\ICO_fullpage_tab.ico" />
+    <None Include="res\ICO_lib_graphic.ico" />
+    <None Include="res\ICO_lib_logic.ico" />
+    <None Include="res\ICO_logic.ico" />
+    <None Include="res\ICO_logicgroup.ico" />
+    <None Include="res\ICO_pagegroup.ico" />
+    <None Include="res\IDI_ICON_TREE_COM1.ico" />
+    <None Include="res\IDI_ICON_TREE_COM2.ico" />
+    <None Include="res\IDI_MAINFRAMEICON.ico" />
+    <None Include="res\incbtn.cur" />
+    <None Include="res\location_32px_1133837_easyicon.net.ico" />
+    <None Include="res\logic_48.ico" />
+    <None Include="res\mainfram.bmp" />
+    <None Include="res\Myicon.ico" />
+    <None Include="res\pagegroup.ico" />
+    <None Include="res\PIF.bmp" />
+    <None Include="res\PIF.png" />
+    <None Include="res\point_48.ico" />
+    <None Include="res\pressure.cur" />
+    <None Include="res\properties.bmp" />
+    <None Include="res\properties_hc.bmp" />
+    <None Include="res\properties_wnd.ico" />
+    <None Include="res\properties_wnd_hc.ico" />
+    <None Include="res\pump.cur" />
+    <None Include="res\quit.ico" />
+    <None Include="res\realtimecurve.ico" />
+    <None Include="res\redarrow.cur" />
+    <None Include="res\redlight.cur" />
+    <None Include="res\reload.ico" />
+    <None Include="res\rightBarHeaderBk.bmp" />
+    <None Include="res\servermanager_48.ico" />
+    <None Include="res\temp.cur" />
+    <None Include="res\tempdown.cur" />
+    <None Include="res\text.cur" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="res\Toolbar3.bmp" />
+    <None Include="res\Toolbar4.bmp" />
+    <None Include="res\Toolbaralign_disable.bmp" />
+    <None Include="res\Toolbaralign_hot.bmp" />
+    <None Include="res\ToolbarLayout.bmp" />
+    <None Include="res\Toolbar_disabled.bmp" />
+    <None Include="res\Toolbar_hot.bmp" />
+    <None Include="res\Toolbar_new.bmp" />
+    <None Include="res\unknowplc.cur" />
+    <None Include="res\unknowserial.cur" />
+    <None Include="res\upArrow.bmp" />
+    <None Include="res\UPPC-Designer.ico" />
+    <None Include="res\UPPC-DesignerDoc.ico" />
+    <None Include="res\UPPCDesigner.rc2" />
+    <None Include="res\valve.cur" />
+    <None Include="res\yellowlight.cur" />
+    <None Include="C:\Users\david\Desktop\锡柴\无标题.bmp" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UPPC-Designer.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="UPPC-Designer.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
